@@ -19,9 +19,10 @@ public class NthMergeSort {
         System.out.println(Arrays.equals(arr, arrClone));
     }
 
-    public static void nthMergeSort(final int[] arr, final int leftIndex, final int rightIndex, final int N) throws NullPointerException, ArrayIndexOutOfBoundsException{
+    public static void nthMergeSort(final int[] arr, final int leftIndex, final int rightIndex, final int N) throws NullPointerException, ArrayIndexOutOfBoundsException, IllegalArgumentException{
         if (arr == null) throw new NullPointerException("arr cannot be null");
         if (leftIndex < 0 || rightIndex >= arr.length) throw new ArrayIndexOutOfBoundsException("Incorrect indexes was passed");
+        if (N <= 1) throw new IllegalArgumentException("N must be 2 or higher");
         if (leftIndex < rightIndex){
             final List<Integer> indexes = new ArrayList<>();
             indexes.add(leftIndex);
